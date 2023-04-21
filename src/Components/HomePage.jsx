@@ -1,9 +1,10 @@
 import React from 'react'
 
 import '../CSS/homePage.css'
+import '../CSS/home.css'
 import Cards,{ImgCard,ProgCard} from './Cards';
 
-import { BsSearch,BsTwitter } from "react-icons/bs";
+import { BsSearch,BsTwitter,BsClockHistory,BsClock } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { AiOutlineGooglePlus } from "react-icons/ai";
 import { GrSkype } from "react-icons/gr";
@@ -11,7 +12,70 @@ import { SiSitepoint } from "react-icons/si";
 
 const HomePage = () => {
   return (
-    <div className="container-fluid px-0">
+
+    
+
+    <div className="container-fluid px-0 ">
+
+<div className="container-fluid">
+
+
+<div className="row">
+    <div className="col-sm-12">
+
+        <div className='f_header_top'>
+            <div className="inner_f_header_top">
+                <div className="l_inner_f_header_top">
+                    <span style={{
+                        backgroundColor:'#fd4a36',
+                        paddingTop:2,
+                        paddingBottom:2,
+                        paddingLeft:9,
+                        paddingRight:9,
+                        fontSize:13,
+                        borderRadius:20,
+                        marginRight:8,
+                        display:'flex',
+                        alignItems:'center',
+                        justifyItems:'center'
+                    }} >Too Little!</span>  Receiving $100 / Hr Consulting. <span style={{
+                        fontSize:13,
+                        borderRadius:20,
+                        marginLeft:8,
+                        color:'#fd4a36',
+                        
+                    }} >Start Today</span> 
+                </div>
+                <div className="r_inner_f_header_top">
+                    <div className="inner_r_inner">
+                        <BsClock style={{
+                            fontSize: 13,
+                            marginRight:10,
+                            color:'fd4a36'
+                        }} />
+                        Office Hrs: Today 9.00am to 6.00pm
+                    </div>
+                    <div className="inner_l_inner">
+                        <div className="t_inner">
+                        <select name="language" id="lang" >
+                            <option value="English">English</option>
+                        </select>
+                        </div>
+                        <div className="b_inner">
+                            Powered by Google TranslateTranslate
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+</div>
+
+{/* Novbar */}
         <div className="row ">
             <div className="col-sm-5 fs-1 text-sm-center fw-bold lh-sm d-flex justify-content-center py-4">
                 logo
