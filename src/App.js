@@ -10,12 +10,12 @@ import About from './Components/About';
 function App() {
   return (
     <>
-      {/* <HomePage/> */}
+      <HomePage/>
       {/* <TermsConditions/> */}
       {/* <PolicyPrivacy/> */}
       {/* <Disclaimer/> */}
       {/* <Contact/> */}
-      <About/>
+      {/* <About/> */}
     </>
   );
 }

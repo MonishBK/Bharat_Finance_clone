@@ -222,9 +222,9 @@ const HomePage = () => {
             <div className="row">
                 {/* <div className="col-sm-2 bg-danger "></div> */}
                 <div className="col-sm-10 " style={{
-        backgroundColor:'#f1f5f8'
-    }}>
-                    <div className="row">
+                        backgroundColor:'#f1f5f8'
+                    }}>
+                    <div className="row ">
                         <div className="col-sm-2"></div>
                         <div className="col-sm-10">
 
@@ -246,7 +246,25 @@ const HomePage = () => {
 
                         </div>
                     </div>
+                        <div className="row">
+                        <div className="col-sm-2"></div>
+                        <div className="col-sm-10">
 
+                            <p className="fs-3 text-center">
+                            We help take your small business to the next level. Don’t hesitate to contact us.
+                            </p>
+                            <h2 className="fs-3 fw-5 text-center" >
+                            30 Minutes Free Consultation
+                            </h2>
+                            <div className="btn_slider">
+                                    <button className='shadow-lg' style={{
+                                        color:"#fd4a36",
+                                        backgroundColor:"#fff"
+                                    }}
+                                    >Send Request</button>
+                                </div>
+                        </div>
+                        </div>        
 
                 </div>
                 <div className="col-sm-2"></div>
@@ -585,6 +603,26 @@ const HomePage = () => {
 
         </div>
 
+    </div>
+</div>
+
+
+<div className="row ">
+    <div className="col-lg-6 col-sm-12 ">
+        <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+            <div className="carousel-item active">
+            <img src="./img/image-6.jpg" className="d-block w-100" alt="..."/>
+            </div>
+            <div className="carousel-item">
+            <img src="./img/image-7.jpg" className="d-block w-100" alt="..."/>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div className="col-lg-6 col-sm-12 bottom_slider">
+            
     </div>
 </div>
 

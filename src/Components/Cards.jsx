@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsArrowRightShort,BsArrowDownShort ,BsArrowRight} from "react-icons/bs";
+import { BsArrowRightShort,BsArrowDownShort ,BsArrowRight,BsBank2} from "react-icons/bs";
 
 const Cards = () => {
   return (
@@ -136,6 +136,25 @@ export const SlidingBox = () =>{
                     Same as saying through shrinking from toil and pain these actual teachings of the great explorer of the truth, the master builder of human happiness.
                     </div>
                 </div>
+    )
+}
+
+export const ServiceBox = ({icon,text}) =>{
+    return(
+        <div className="col-lg-4 col-sm-6 py-3 px-4 " style={{
+            display:"grid",
+            placeItems:"center",
+
+        }}>
+            <div className="service_boxes py-5 px-3 shadow rounded">
+                <div className="icon_box">
+                    <span className='align-middle' >
+                        {icon}
+                    </span>
+                </div>
+                    {text}    
+            </div>
+        </div>
     )
 }
 

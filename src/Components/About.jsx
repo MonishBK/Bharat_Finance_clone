@@ -1,7 +1,10 @@
 import React from 'react'
 
 import '../CSS/homePage.css'
-import { HeaderCard } from './Cards'
+import { HeaderCard,ServiceBox } from './Cards'
+
+import { BsBank2,BsArrowRight,BsTrophy,BsFillPeopleFill } from "react-icons/bs";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 
 const About = () => {
   return (
@@ -106,18 +109,10 @@ const About = () => {
                 </div>
         </div>
 
-        <div className="row">
-            <div className="col-sm-12 py-5" style={{
-                position:'relative'
-            }}>
-                <img src="./img/bg-20.jpg" alt="" className='img-fluid'  />
-
+        <div className="row fun_facts_section py-5">
+            <div className="col-sm-12 py-5" >
                 <div className="row" style={{
-                    position:'absolute',
-                    top:0,
-                    left:0,
-                    right:0,
-                    bottom:0,
+
                     color: 'white',
                 }}>
 
@@ -128,13 +123,17 @@ const About = () => {
 
                         <div className="row">
 
-                            <div className="col-sm-5 ">
-
+                            <div className="col-sm-5 text-end pt-5">
+                                <AiOutlineFundProjectionScreen style={{
+                                color:'#fff',
+                                fontSize:50,
+                                fontWeight:'bold'
+                            }}  />
                             </div>
                             <div className="col-sm-7 p-5  " style={{
                                 borderRight: '2px solid grey'
                             }} >
-                                <p className='fs-3 fw-bold'>
+                                <p className='fs-3 fw-bold pb-3'>
                                     PROJECTS
                                 </p>
                                 <h2 style={{
@@ -167,13 +166,17 @@ const About = () => {
 
                     <div className="row">
 
-                        <div className="col-sm-5 ">
-
+                        <div className="col-sm-5 text-end pt-5 ">
+                            <BsFillPeopleFill style={{
+                                color:'#fff',
+                                fontSize:50,
+                                fontWeight:'bold'
+                            }} />
                         </div>
                         <div className="col-sm-7 p-5  " style={{
                             borderRight: '2px solid grey'
                         }} >
-                            <p className='fs-3 fw-bold'>
+                            <p className='fs-3 fw-bold pb-3'>
                                 OUR TEAM
                             </p>
                             <h2 style={{
@@ -203,13 +206,17 @@ const About = () => {
 
                     <div className="row">
 
-                        <div className="col-sm-5 ">
-
+                        <div className="col-sm-5 text-end pt-5 ">
+                            <BsTrophy style={{
+                                color:'#fff',
+                                fontSize:50,
+                                fontWeight:'bold'
+                            }} />
                         </div>
                         <div className="col-sm-7 p-5  " style={{
                             borderRight: '2px solid grey'
                         }} >
-                            <p className='fs-3 fw-bold'>
+                            <p className='fs-3 fw-bold pb-3'>
                             HAPPY CLIENTS
                             </p>
                             <h2 style={{
@@ -239,7 +246,9 @@ const About = () => {
 
         {/* Industry we served */}
 
-        <div className="row p-5" >
+        <div className="row p-5" style={{
+            backgroundColor:"#f1f5f8",
+        }} >
             <div className="col-sm-6 py-5">
                 <h1 className=' pb-5 ' style={{
                     fontSize:40,
@@ -272,10 +281,232 @@ const About = () => {
             </div>
         </div>
 
-        <div className="row">
+        <div className="row pb-5" style={{
+            placeContent:"space-evenly",
+            backgroundColor:"#f1f5f8",
+        }}>
             
+            <ServiceBox icon={<BsBank2/> } text={ <div className=" fs-2 fw-bold " style={{
+                    display: 'flex',
+                    alignItems:'center'
+                }} >   Banking & <br/> capital market</div>  }/>
+
+            <ServiceBox icon={<BsBank2/> } text={ <div className=" fs-2 fw-bold " style={{
+                    display: 'flex',
+                    alignItems:'center'
+                }} >   
+                Finance & <br/>
+                insurance market</div>  }/>
+
+            <ServiceBox icon={<BsBank2/> } text={ <div className=" fs-2 fw-bold " style={{
+                    display: 'flex',
+                    alignItems:'center'
+                }} >   
+                Logistic & <br/>
+                trasportation</div>  }/>
+
+            <ServiceBox icon={<BsBank2/> } text={ <div className=" fs-2 fw-bold " style={{
+                    display: 'flex',
+                    alignItems:'center'
+                }} >   
+                
+                Justice & <br/>    
+                defence security</div>  }/>
+
+            <ServiceBox icon={<BsBank2/> } text={ <div className=" fs-2 fw-bold " style={{
+                    display: 'flex',
+                    alignItems:'center'
+                }} >   
+                       
+                Energy & <br/>
+                resource industry</div>  }/>
+
+            <ServiceBox icon={<BsBank2/> } text={ <div className=" fs-2 fw-bold " style={{
+                    display: 'flex',
+                    alignItems:'center'
+                }} >   
+                       
+                Life & <br/>
+                health science</div>  }/>
+
+
         </div>
 
+        <div className="row awards_con mt-5">
+            <div className="row px-5 py-5">
+                <div className="col-sm-12 px-5 py-5">
+                    <h1 className='pb-4' style={{
+                        fontSize:40,
+                        fontWeight:'bold',
+                    }} >
+                        Our Awards And Achivements
+                    </h1>
+
+                    <div className="circles_div wrk_prog_circle">
+                        <div className="circles"></div>
+                        <div className="circles"></div>
+                        <div className="circles circle_middel"></div>
+                        <div className="circles"></div>
+                        <div className="circles"></div>
+                    </div>
+
+                    <p className='fs-3 pt-5'>
+                    To take a trivial example, which of us ever undertakes laborious physical exercise, except <br />
+                        obtain some advantage from it enjoy a pleasure.
+                    </p>
+
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="col-sm-8 px-5">
+                    <div className="row">
+
+                        <div className="col-lg-4 " style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            flexDirection:'column'
+                        }} >
+                            <div className="image mb-4">
+                                <img src="./img/award-8.png" alt="" className='.img-thumbnail' />
+                            </div>
+                            <p className=' fw-bold fs-3 text-center' >
+                                Best consulting <br />
+                                company
+                            </p>
+                        </div>
+
+                        <div className="col-lg-4 border-left border-start border-end " style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            flexDirection:'column'
+                        }} >
+                            <div className="image mb-4">
+                                <img src="./img/award-9.png" alt="" className='.img-thumbnail' />
+                            </div>
+                            <p className=' fw-bold fs-3 text-center' >
+                            Best outsourcing <br/>
+                            advisors
+
+                            </p>
+                        </div>
+
+                        <div className="col-lg-4 " style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            flexDirection:'column'
+                        }} >
+                            <div className="image mb-4">
+                                <img src="./img/award-10.png" alt="" className='.img-thumbnail' />
+                            </div>
+                            <p className=' fw-bold fs-3 text-center' >
+                            Customer choice for <br/>
+                            support
+                            </p>
+                        </div>
+                    </div>
+                        <p className='fs-3 px-5 py-5' >
+                        We have won 27 more awards in our career. View All Awards  <BsArrowRight className='fw-bold fs-2'/>
+                        </p>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        {/* proud to work */}
+
+        <div className="row p-5" style={{
+            backgroundColor:"#f1f5f8",
+        }} >
+            <div className="col-sm-6 py-5">
+                <h1 className=' pb-5 ' style={{
+                    fontSize:40,
+                    fontWeight:'bold',
+                }} >
+                         We Proud To Work
+                </h1>
+
+                <div className="circles_div wrk_prog_circle">
+
+                    <div className="circles"></div>
+                    <div className="circles"></div>
+                    <div className="circles circle_middel"></div>
+                    <div className="circles"></div>
+                    <div className="circles"></div>
+                </div>
+                
+                <div className="row">
+                    <div className="col-sm-4">
+
+                    </div>
+                </div>
+
+            </div>
+            <div className="col-sm-6 py-5">
+                <p className='fs-3' >
+                Which is the same as saying through shrinking from toil and pain. These cases are
+                perfectly simple and easy to distinguish.
+                </p>
+            </div>
+        </div>
+        <div className="row pb-5 mb-5 px-5" style={{
+            placeContent:"space-evenly",
+            backgroundColor:"#f1f5f8",
+        }}>
+            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
+                display:"flex",
+                justifyContent:"center",
+            }}>
+                <img src="./img/client-7.png" alt="" />
+            </div>
+            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
+                display:"flex",
+                justifyContent:"center",
+            }}>
+                <img src="./img/client-8.png" alt="" />
+            </div>
+            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
+                display:"flex",
+                justifyContent:"center",
+            }}>
+                <img src="./img/client-9.png" alt="" />
+            </div>
+            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
+                display:"flex",
+                justifyContent:"center",
+            }}>
+                <img src="./img/client-10.png" alt="" />
+            </div>
+
+            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
+                display:"flex",
+                justifyContent:"center",
+            }}>
+                <img src="./img/client-11.png" alt="" />
+            </div>
+            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
+                display:"flex",
+                justifyContent:"center",
+            }}>
+                <img src="./img/client-12.png" alt="" />
+            </div>
+            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
+                display:"flex",
+                justifyContent:"center",
+            }}>
+                <img src="./img/client-13.png" alt="" />
+            </div>
+            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
+                display:"flex",
+                justifyContent:"center",
+            }}>
+                <img src="./img/client-14.png" alt="" />
+            </div>
+
+    
+        </div>
 
     </div>
   )
