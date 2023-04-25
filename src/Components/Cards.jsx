@@ -1,6 +1,7 @@
 import React from 'react'
 import { BsArrowRightShort,BsArrowDownShort ,BsArrowRight,BsBank2} from "react-icons/bs";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { IoHomeOutline } from "react-icons/io5";
 
 const Cards = ({t_text,m_text,b_text,logo_img}) => {
   return (
@@ -43,32 +44,42 @@ const Cards = ({t_text,m_text,b_text,logo_img}) => {
 
 export const ImgCard = ({img_src}) =>{
     return(
-        <div className="card_con">
-            <div className="inner_card_con">
-                <img src={img_src} alt="no image"  className='img-fluid'    />
-            </div>
+        // <div className="card_con">
+        //     <div className="inner_card_con">
+        //         <img src={img_src} alt="no image"  className='img-fluid'    />
+        //     </div>
 
-            <div className="card_cover">
-                <div className="title">
-                    <span className="icon ">
-                        <img src="./img/icon-8.png" alt="" className='pe-3' />
-                        PRECISION
-                    </span>
-                </div>
-                <div className="link_btn">
-                    <a href="#"> 
-                        <MdKeyboardArrowRight className='fs-2 fw-bold' />
-                    </a>
-                </div>
-                <div className="content">
-                    <h5 className='fs-3'>
-                        Financial
-                    </h5>
-                    <h4 className='fs-2'>
-                        Capital Management
-                    </h4>
-                </div>
-            </div>
+        //     <div className="card_cover">
+        //         <div className="title">
+        //             <span className="icon ">
+        //                 <img src="./img/icon-8.png" alt="" className='pe-3' />
+        //                 PRECISION
+        //             </span>
+        //         </div>
+        //         <div className="link_btn">
+        //             <a href="#"> 
+        //                 <MdKeyboardArrowRight className='fs-2 fw-bold' />
+        //             </a>
+        //         </div>
+        //         <div className="content">
+        //             <h5 className='fs-3'>
+        //                 Financial
+        //             </h5>
+        //             <h4 className='fs-2'>
+        //                 Capital Management
+        //             </h4>
+        //         </div>
+        //     </div>
+        // </div>
+
+        <div className="card_con " >
+             <div className="inner_card_con">
+               <img src={img_src} alt="no image"  className=''    />
+             </div>
+
+             <div className="cover">
+                <p className='fs-3' >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor corrupti dicta temporibus atque consequuntur modi veniam asperiores at! Fugiat voluptatum maiores necessitatibus quis, rerum quasi dolorem iure blanditiis consequatur aliquid. Autem, voluptate.</p>
+             </div>
         </div>
     )
 }
@@ -181,6 +192,61 @@ export const ServiceBox = ({icon,text}) =>{
                     {text}    
             </div>
         </div>
+    )
+}
+
+export const DevelopingCards = () =>{
+    return(
+        <>
+        <div className=" dev_led_main py-4 my-5">
+                                    <div className="image">
+                                        <div className="icon">
+                                            <span>
+                                                <IoHomeOutline/>
+                                            </span>
+                                        </div>
+                                        <img src="./img/image-1.jpg" alt="" className='img-fluid' />
+                                    </div>
+                                    <div className="content ">
+                                        <h4 className='fs-4 text-center' style={{
+                                            color:'#fd4a36'
+                                        }}>
+                                            EXPLORE
+                                        </h4>
+                                        <h3 className='fs-2 text-center'>
+                                            Our Company History
+                                        </h3>
+                                    </div>
+
+
+                                    <div className="overlay">
+
+                                        <div className="content">
+                                            <h4 className='fs-3' style={{
+                                            color:'#fd4a36'
+                                        }}>
+                                                EXPLORE
+                                            </h4>
+                                            <h3 className='fs-2'>
+                                                Our Company History
+                                            </h3>
+                                        </div>
+                                        <div className="text">
+                                            <p className='fs-4 text-light text-center px-5'>
+                                            In a free hour when our power choices when proveprevents best all easy to distinguish.
+                                            </p>
+
+                                            <div className="link_btn">
+                                                <a href="#">
+                                            <MdKeyboardArrowRight className='fs-1 fw-bold'/>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+        
+        </>
     )
 }
 

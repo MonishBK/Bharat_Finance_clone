@@ -2,167 +2,25 @@ import React from 'react'
 
 import '../CSS/homePage.css'
 import '../CSS/home.css'
-import Cards,{ImgCard,ProgCard} from './Cards';
+import Cards,{ImgCard,ProgCard,DevelopingCards} from './Cards';
+import Footer from './Footer';
+import Navbar,{MainNavbar} from './Navbar';
 
-import { BsSearch,BsTwitter,BsClockHistory,BsClock,BsFacebook,BsPinterest,BsInstagram ,BsYoutube} from "react-icons/bs";
-import { FaFacebookF } from "react-icons/fa";
-import { AiOutlineGooglePlus } from "react-icons/ai";
-import { GrSkype } from "react-icons/gr";
 import { SiSitepoint } from "react-icons/si";
-import { MdKeyboardArrowDown,MdStarRate,MdKeyboardArrowRight } from "react-icons/md";
-import { GoPlus } from "react-icons/go";
-import { RxCrossCircled } from "react-icons/rx";
+import { MdStarRate } from "react-icons/md";
 import { HiOutlineChat } from "react-icons/hi";
-import { IoHomeOutline } from "react-icons/io5";
+
 
 const HomePage = () => {
-
-
-    const ToggleMenu =() =>{
-        document.getElementById("toggle_container").style.display = "flex";
-    }
-
-    const DisableMenu = () =>{
-        document.getElementById("toggle_container").style.display = "none";
-    }
-
-    const CompanyToggle = () =>{
-
-       let c_dom = document.getElementById("com_items")
-        if(c_dom.style.display == "none"){
-            c_dom.style.display = "flex";
-        }else{
-            c_dom.style.display = "none";
-            document.getElementById("legal_items").style.display = 'none'
-        }
-    }
-
-    const LegalToggle = () =>{
-       let l_dom = document.getElementById("legal_items")
-        if(l_dom.style.display == "none"){
-            document.getElementById("com_items").style.display = "flex";
-            l_dom.style.display = "flex";
-        }else{
-            document.getElementById("com_items").style.display = "flex";
-            l_dom.style.display = "none";
-        }
-    }
 
   return (
 
     
 <>
+<Navbar />
+<MainNavbar />
+
 <div className="main_container">
-
-{/* <div className="timing_container"> */}
-
-
-<div className="row">
-    <div className="col-sm-12 col-lg-12">
-
-        <div className='f_header_top'>
-            <div className="inner_f_header_top">
-                <div className="l_inner_f_header_top">
-                    <span style={{
-                        backgroundColor:'#fd4a36',
-                        paddingTop:2,
-                        paddingBottom:2,
-                        paddingLeft:9,
-                        paddingRight:9,
-                        fontSize:13,
-                        borderRadius:20,
-                        marginRight:8,
-                        display:'flex',
-                        alignItems:'center',
-                        justifyItems:'center'
-                    }} >Too Little!</span>  Receiving $100 / Hr Consulting. <span style={{
-                        fontSize:13,
-                        borderRadius:20,
-                        marginLeft:8,
-                        color:'#fd4a36',
-                        
-                    }} >Start Today</span> 
-                </div>
-                <div className="r_inner_f_header_top">
-                    <div className="inner_r_inner">
-                        <BsClock style={{
-                            fontSize: 13,
-                            marginRight:10,
-                            color:'fd4a36'
-                        }} />
-                        Office Hrs: Today 9.00am to 6.00pm
-                    </div>
-                    <div className="inner_l_inner">
-                        <div className="t_inner">
-                        <select name="language" id="lang" >
-                            <option value="English">English</option>
-                        </select>
-                        </div>
-                        <div className="b_inner">
-                            Powered by Google TranslateTranslate
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-</div>
-{/* </div> */}
-
-{/* Novbar */}
-        <div className="row nav_bar ">
-            <div className="col-lg-5 col-sm-6  fs-1 text-sm-center fw-bold lh-sm d-flex justify-content-center py-4">
-                logo
-            </div>
-            <div className="col-lg-7 col-sm-6 fs-2 ">
-                <div className="row py-5 ">
-                    <div className="col-lg-8 col-sm-0">
-                        <div className="row menu_items ">
-                            <div className="col-sm-2 fs-5 text-center py-1 items "   >HOME </div>
-                            <div className="col-sm-3 fs-5 text-center py-1 more_company items "  >
-                                 COMPANY <MdKeyboardArrowDown className='fs-2 text-center ' />
-                                 <div className="list_company_item py-3 ">
-                                    <div className='two_opt px-4' >
-                                        <p  >ABOUT US</p>
-                                        <p className='more_opt_legal' >  LEGAL <GoPlus className='fw-bold fs-4'/>
-                                        
-
-                                            <div className=" py-3 px-4 more_legal" >
-                                                <p>TERMS & CONDITIONS</p>
-                                                <p style={{
-                                                    borderTop:'1px solid #afadade3',
-                                                    borderBottom:'1px solid #afadade3'
-                                                }}>DISCLAMER</p>
-                                                <p>PRIVACY POLICY</p>
-                                            </div>
-
-                                         </p>
-                                    </div>
-                                 </div>
-                                </div>
-                            <div className="col-sm-2 fs-5 text-center py-1 items"   >CONTACT</div>
-                            <div className="col-sm-2 fs-5 text-center py-1 items"  >SIGN UP</div>
-                            <div className="col-sm-2 fs-5 text-center py-1 items" >SIGN IN</div>
-                        </div>
-                    </div>
-                    <div className="col-lg-2 col-sm-6  fs-5 text-center " style={{fontWeight:500, color:'#000' }}  >
-                        <div className="row last_part">
-                            <div className="col-sm-3 col-lg-6 nav_search_icon">
-                                <BsSearch className='fs-2 '/>
-                            </div>
-                            <div className="col-sm-3 col-lg-6 more_symbol py-2" onClick={ToggleMenu}>
-                                <div className="more_lines"></div>
-                                <div className="more_lines"></div>
-                                <div className="more_lines"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     {/* Slider */}
     <div className="container-fluid px-0 slider_con ">
@@ -179,16 +37,8 @@ const HomePage = () => {
                                 <div className="line_image l2"></div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, ullam?.</p>
                                 <div className="btn_slider">
-                                    <button style={{
-                                        color:"#fff",
-                                        backgroundColor:"#fd4a36"
-                                    }} >Our Comapy</button>
-                                    <button style={{
-                                        color:"#fd4a36",
-                                        backgroundColor:"#fff"
-                                    }}
-                                    
-                                    >Contact Us</button>
+                                    <button className='btn_o_w' >Our Comapy</button>
+                                    <button className='btn_w_o' >Contact Us</button>
                                 </div>
                             </div>
                         </div>
@@ -205,16 +55,8 @@ const HomePage = () => {
                                 <div className="line_image l2"></div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, ullam?.</p>
                                 <div className="btn_slider">
-                                    <button style={{
-                                        color:"#fff",
-                                        backgroundColor:"#fd4a36"
-                                    }} >Our Comapy</button>
-                                    <button style={{
-                                        color:"#fd4a36",
-                                        backgroundColor:"#fff"
-                                    }}
-                                    
-                                    >Contact Us</button>
+                                    <button className='btn_o_w' >Our Comapy</button>
+                                    <button className='btn_w_o' >Contact Us</button>
 
                             </div>
                                 </div>
@@ -233,10 +75,7 @@ const HomePage = () => {
                                 </div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, ullam?.</p>
                                 <div className="btn_slider">
-                                    <button style={{
-                                        color:"#fff",
-                                        backgroundColor:"#fd4a36"
-                                    }} >Sign UP</button>
+                                    <button className='btn_o_w' >Sign UP</button>
                                     
                                 </div>
                             </div>
@@ -254,22 +93,6 @@ const HomePage = () => {
             </div>
 
          </div>
-
-
-
-        {/* container-2 */}
-        <div className="row con_2">
-            <div className="col-sm-12">
-                {/* <img src="./img/pattern-1.png"  alt="" className='img-fluid' /> */}
-                <div className="row">
-                    <div className="col-sm-12">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
 
 
     </div>
@@ -308,145 +131,9 @@ const HomePage = () => {
                     <div className="row  developing_leaders_con py-5">
                         <div className="col-sm-12 fs-1 text-light py-5 px-5 inner_developing_leaders ">
                             
-                                <div className=" dev_led_main py-4 my-5">
-                                    <div className="image">
-                                        <div className="icon">
-                                            <span>
-                                                <IoHomeOutline/>
-                                            </span>
-                                        </div>
-                                        <img src="./img/image-1.jpg" alt="" className='img-fluid' />
-                                    </div>
-                                    <div className="content ">
-                                        <h4 className='fs-4 text-center' style={{
-                                            color:'#fd4a36'
-                                        }}>
-                                            EXPLORE
-                                        </h4>
-                                        <h3 className='fs-2 text-center'>
-                                            Our Company History
-                                        </h3>
-                                    </div>
-
-
-                                    <div className="overlay">
-
-                                        <div className="content">
-                                            <h4 className='fs-3' style={{
-                                            color:'#fd4a36'
-                                        }}>
-                                                EXPLORE
-                                            </h4>
-                                            <h3 className='fs-2'>
-                                                Our Company History
-                                            </h3>
-                                        </div>
-                                        <div className="text">
-                                            <p className='fs-4 text-light text-center px-5'>
-                                            In a free hour when our power choices when proveprevents best all easy to distinguish.
-                                            </p>
-
-                                            <div className="link_btn">
-                                                <a href="#">
-                                            <MdKeyboardArrowRight className='fs-1 fw-bold'/>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div className="dev_led_main_2  py-4 my-5">
-                                    <div className="orange_design">
-                                        <div className="inner_l_design"></div>
-                                        <div className="inner_r_design"></div>
-                                    </div>
-                                    <div className="content py-3 shadow-lg">
-                                        
-                                        <h4 className='fs-4' style={{
-                                            color: "#fd4a36"
-                                        }} >
-                                            KNOWLEDGE
-                                        </h4>
-                                        <h2 className='fs-2'>
-                                            Smart self service
-                                        </h2>
-                                    </div>
-
-
-                                    <div className="overlay">
-
-                                        <div className="content shadow-lg">
-                                            <h4 className='fs-3' style={{
-                                            color:'#fd4a36'
-                                        }}>
-                                                KNOWLEDGE
-                                            </h4>
-                                            <h3 className='fs-2'>
-                                            Smart self service
-                                            </h3>
-                                        </div>
-                                        <div className="text">
-                                            <p className='fs-4 text-light text-center px-5'>
-                                            In a free hour when our power choices when proveprevents best all easy to distinguish.
-                                            </p>
-
-                                            <div className="link_btn">
-                                                <a href="#">
-                                            <MdKeyboardArrowRight className='fs-1 fw-bold'/>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div className="dev_led_main_2  py-4 my-5">
-                                    <div className="orange_design">
-                                        <div className="inner_l_design"></div>
-                                        <div className="inner_r_design"></div>
-                                    </div>
-                                    <div className="content py-3 shadow-lg">
-                                        
-                                        <h4 className='fs-4' style={{
-                                            color: "#fd4a36"
-                                        }} >
-                                            KNOWLEDGE
-                                        </h4>
-                                        <h2 className='fs-2'>
-                                            Smart self service
-                                        </h2>
-                                    </div>
-
-
-                                    <div className="overlay">
-
-                                        <div className="content shadow-lg">
-                                            <h4 className='fs-3' style={{
-                                            color:'#fd4a36'
-                                        }}>
-                                                KNOWLEDGE
-                                            </h4>
-                                            <h3 className='fs-2'>
-                                            Smart self service
-                                            </h3>
-                                        </div>
-                                        <div className="text">
-                                            <p className='fs-4 text-light text-center px-5'>
-                                            In a free hour when our power choices when proveprevents best all easy to distinguish.
-                                            </p>
-
-                                            <div className="link_btn">
-                                                <a href="#">
-                                            <MdKeyboardArrowRight className='fs-1 fw-bold'/>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
+                                <DevelopingCards />
+                                <DevelopingCards />
+                                <DevelopingCards />
                                 
 
                         </div>
@@ -463,10 +150,7 @@ const HomePage = () => {
                             30 Minutes Free Consultation
                             </h2>
                             <div className="btn_slider">
-                                    <button className='shadow-lg' style={{
-                                        color:"#fd4a36",
-                                        backgroundColor:"#fff"
-                                    }}
+                                    <button className='shadow-lg btn_w_o' 
                                     >Send Request</button>
                                 </div>
                         </div>
@@ -583,14 +267,11 @@ const HomePage = () => {
 </div>
 
 {/* Reasons for choosing */}
-<div className="row mt-5" style={{
-    backgroundColor:'#201630',
-    paddingBottom:90
-}}>
+<div className="row mt-5 reason_main_con" >
     <div className="col-lg-12" style={{
         position:'relative'
     }}>
-        <img src="./img/pattern-3.png" alt="" className='img-fluid float-end' />
+        <img src="./img/pattern-3.png" alt="" className='img-fluid float-end pattern_3_img' />
 
         <div className="row reason_image" style={{
             position:'absolute'
@@ -601,16 +282,10 @@ const HomePage = () => {
         </div>
 
 {/* inside the choosing for Finance */}
-    <div className="row  pt-5 mt-5 main_Consultation_container " style={{
-         position:'absolute',
-        //  top:0,
-         bottom:-10,
-         right:0,
-         left:0
-    }}>
+    <div className="row  pt-5 mt-5 main_Consultation_container " >
         
         <div className="col-sm-12  col-lg-6 px-5" style={{
-            position:'relative'
+            // position:'relative'
 
         }} >
             <div className="row">
@@ -654,10 +329,7 @@ const HomePage = () => {
                         <div className="row">
                             <div className="col-sm-6">
                             <div className="btn_slider">
-                                    <button className='shadow-lg' style={{
-                                        color:"#fd4a36",
-                                        backgroundColor:"#fff"
-                                    }}
+                                    <button className='shadow-lg btn_w_o' 
                                     >Send Request</button>
                                 </div>
                             </div>
@@ -693,7 +365,7 @@ const HomePage = () => {
                     </div>
 
                     <div className="row mt-5 ">
-                        <div className="col-sm-2 single_feacture_point mt-4 pt-1"   >
+                        <div className="col-sm-1 col-lg-2 single_feacture_point mt-4 pt-1"   >
                             <SiSitepoint />
                         </div>
                         {/* <div className="col-sm-1"></div> */}
@@ -711,7 +383,7 @@ const HomePage = () => {
                     </div>
 
                     <div className="row  mt-5 ">
-                        <div className="col-sm-2 single_feacture_point mt-4 pt-1"   >
+                        <div className="col-sm-1 col-lg-2 single_feacture_point mt-4 pt-1"   >
                             <SiSitepoint />
                         </div>
                         {/* <div className="col-sm-1"></div> */}
@@ -729,7 +401,7 @@ const HomePage = () => {
                     </div>
 
                     <div className="row mt-5 ">
-                        <div className="col-sm-2 single_feacture_point mt-4 pt-1"   >
+                        <div className="col-sm-1 col-lg-2 single_feacture_point mt-4 pt-1"   >
                             <SiSitepoint />
                         </div>
                         {/* <div className="col-sm-1"></div> */}
@@ -757,7 +429,6 @@ const HomePage = () => {
 
 
 {/* Our Projects */}
-
 <div className="row">
     <div className="col-sm-12">
         <div className="row proj_con">
@@ -785,29 +456,26 @@ const HomePage = () => {
 
 </div>
 
- <div className="proj_con_card">
+ <div className="proj_con_card ">
         <div className="inner_con_proj">
             <ImgCard img_src={'./img/gallery-1.jpg'} />
             <ImgCard img_src={'./img/gallery-2.jpg'} />
             <ImgCard img_src={'./img/gallery-3.jpg'} />
+            <ImgCard img_src={'./img/gallery-4.jpg'} />
+            <ImgCard img_src={'./img/gallery-5.jpg'} />
+            <ImgCard img_src={'./img/gallery-1.jpg'} />
 
         </div>
  </div>
- <div className="proj_con_card">
+ {/* <div className="proj_con_card">
         <div className="inner_con_proj">
             <ImgCard img_src={'./img/gallery-4.jpg'} />
             <ImgCard img_src={'./img/gallery-5.jpg'} />
+            <ImgCard img_src={'./img/gallery-5.jpg'} />
             
-            <div className="card_con">
-            <div className="inner_card_con_l ">
-                <a href='#' className="middle_content fs-3 ">
-                    Check <br /> More Works
-                </a>
-            </div>
-        </div>
 
         </div>
- </div>
+ </div> */}
 
  {/* work progress */}
 <div className="wrk_progress">
@@ -956,165 +624,10 @@ const HomePage = () => {
     </div>
 </div>
 
-{/* Footer */}
-<div className="footer_div ">
-    <div className=" inner_footer_div">
-        <div className="first_part"></div>
 
-        <div className=" row second_part">
-            <div className=" col-lg-3 col-sm-6 l_part ">
-                <h1 className='fs-1'>LOGO</h1>
-            </div>
-            {/* <div className="m_part"> */}
-                <div className=" col-lg-2  col-sm-6  py-3 first">
-                    {/* <div className="inner_f_items"> */}
-                        <h2 className='fs-2 fw-bold'>Company</h2>
-                        <p className='fs-3' >Home</p>
-                        <p className='fs-3'>Contact</p>
-                        <p className='fs-3'>Sign Up</p>
-                        <p className='fs-3'>Sign In</p>
-                    {/* </div> */}
-                </div>
-                <div className=" col-lg-2 col-sm-6 py-3 second">
-                {/* <div className="inner_f_items"> */}
-                        <h2 className='fs-2 fw-bold'>Legal</h2>
-                        <p className='fs-3'>Terms & Conditions</p>
-                        <p className='fs-3'>Disclaimer</p>
-                        <p className='fs-3'>Privacy Policy</p>
-                    {/* </div> */}
-                </div>
-                <div className="col-lg-2 col-sm-6 py-3 third">
-                    {/* <div className="inner_f_items"> */}
-                        <h2 className='fs-2 fw-bold'> Credentials & Support</h2>
-                        <p className='fs-3'>FAQ’s</p>
-                        <p className='fs-3'>Telegram</p>
-                        <p className='fs-3'>Contact</p>
-                        <p className='fs-3'>Resources</p>
-                    {/* </div> */}
-                </div>
-            {/* </div> */}
-            <div className=" col-lg-3 col-sm-12 py-3 r_part">
-                <div className="inner_r_part px-3">
-                        <h2 className='fs-2 fw-bold'>Project</h2>
-                        <div className="images_r_part py-4">
-                            <div className="top_row">
-                                <div className="top_images_r_part">
-                                    <img src="./img/pic1.jpg" alt="" />
-                                </div>
-                                <div className="top_images_r_part">
-                                <img src="./img/pic2.jpg" alt="" />
-                                </div>
-                                <div className="top_images_r_part">
-                                <img src="./img/pic3.jpg" alt="" />
-                                </div>
-
-                                <div className="top_images_r_part">
-                                    <img src="./img/pic1.jpg" alt="" />
-                                </div>
-                                <div className="top_images_r_part">
-                                    <img src="./img/pic2.jpg" alt="" />
-                                </div>
-                                <div className="top_images_r_part">
-                                    <img src="./img/pic3.jpg" alt="" />
-                                </div>
-
-                            </div>
-
-                        </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div className="third_part">
-            <div className="f_tp_footer">
-                <h3>Privacy Policy/Terms & Conditions</h3>
-                <h3>Get back to home</h3>
-            </div>
-            <div className="s_tp_footer">
-                <div className="inner_s_tp_footer">
-                    <div className="logos">
-                        <FaFacebookF/>
-                    </div>
-                    <div className="logos">
-                        <BsTwitter />
-                    </div>
-                    <div className="logos">
-                        <AiOutlineGooglePlus />
-                    </div>
-                    <div className="logos">
-                    <GrSkype/>
-                    </div>
-                </div>
-            </div>
-            <div className="t_tp_footer mt-2">
-                <h3 className='fs-4 text-center'>
-                © Copyright 2023 Bharat Finance | All Rights Reserved. | Designed & Developed by Kanak Technology
-                </h3>
-            </div>
-        </div>
-    </div>
 </div>
-
-    </div>
-
-    <div className="upper_container" id='toggle_container' >
-        <div className="left_con_upper"></div>
-        <div className="right_con_upper">
-            <div className="close_logo"  onClick={DisableMenu}>
-                    <RxCrossCircled />
-            </div>
-
-            <div className="r_top_con">
-                LOGO
-            </div>
-            <div className="r_bottom_con">
-                <div className="item_lists">&nbsp; HOME</div>
-                <div className="item_lists comp_item"  onClick={CompanyToggle}>&nbsp; COMPANY</div>
-
-                    <div className="company_lists" id ='com_items'>
-
-                        <div className="item_lists"> &nbsp;&nbsp;&nbsp; ABOUT US</div>
-                        <div className="item_lists legal_item" onClick={LegalToggle}> &nbsp;&nbsp;&nbsp; LEGAL  </div>
-
-                    </div>
-                        <div className="legal_lists" id='legal_items'  >
-
-                            <div className="item_lists"> &nbsp;&nbsp;&nbsp; TERMS & CONDITIONS</div>
-                            <div className="item_lists"> &nbsp;&nbsp;&nbsp; DISCLAMER</div>
-                            <div className="item_lists"> &nbsp;&nbsp;&nbsp; PRIVACY POLICY </div>
-
-                        </div>
-                
-                <div className="item_lists"> &nbsp; CONTACT</div>
-                <div className="item_lists">&nbsp; SIGN UP</div>
-                <div className="item_lists">&nbsp; SIGN IN</div>
-
-                <div className="menu_logos">
-                    <div className="inner_logos">
-
-                        <div className="logs_items"> 
-                            <BsTwitter/>
-                        </div>
-                        <div className="logs_items">
-                            <BsFacebook/>
-                        </div>
-                        <div className="logs_items">
-                            <BsPinterest/>
-                        </div>
-                        <div className="logs_items">
-                            <BsInstagram/>
-                        </div>
-                        <div className="logs_items">
-                            <BsYoutube/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-
-        </div>
-    </div>
+{/* Footer */}
+<Footer />
 
     </>
   )
