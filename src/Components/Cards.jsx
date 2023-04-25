@@ -1,9 +1,10 @@
 import React from 'react'
 import { BsArrowRightShort,BsArrowDownShort ,BsArrowRight,BsBank2} from "react-icons/bs";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
-const Cards = () => {
+const Cards = ({t_text,m_text,b_text,logo_img}) => {
   return (
-    <div className='container-fluid shadow-lg '  >
+    <div className='container-fluid shadow-lg content_box '  >
         <div className="row" style={{
         // padding:30,
         backgroundColor:'#fff',
@@ -11,24 +12,27 @@ const Cards = () => {
         paddingRight:25,
         paddingLeft:25,
         paddingTop:20,
-        paddingBottom:20
+        paddingBottom:20,
+        marginBottom: 20
     }} >
             <div className="col-sm-12">
 
                 <div className="row ">
-                    <div className="col-sm-12 fs-4 fw-bold">
-                    Projects<br/>
-                    with 100% satisfaction
+                    <div className="col-sm-3">
+                        <img src={logo_img} alt="" />
+                    </div>
+                    <div className="col-sm-9 fs-2 fw-bold">
+                        {t_text}
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-sm-12 " style={{fontWeight:900,fontSize:70,color:'#fd4a36'}}>
-                        2.5K
+                    {m_text}
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-sm-12 fs-4 fw-bold">
-                    Power of choices when nothing what we like best principle.
+                      {b_text}
                     </div>
                 </div>
             </div>
@@ -41,7 +45,29 @@ export const ImgCard = ({img_src}) =>{
     return(
         <div className="card_con">
             <div className="inner_card_con">
-                <img src={img_src} alt="no image"  width={320} height={250}  />
+                <img src={img_src} alt="no image"  className='img-fluid'    />
+            </div>
+
+            <div className="card_cover">
+                <div className="title">
+                    <span className="icon ">
+                        <img src="./img/icon-8.png" alt="" className='pe-3' />
+                        PRECISION
+                    </span>
+                </div>
+                <div className="link_btn">
+                    <a href="#"> 
+                        <MdKeyboardArrowRight className='fs-2 fw-bold' />
+                    </a>
+                </div>
+                <div className="content">
+                    <h5 className='fs-3'>
+                        Financial
+                    </h5>
+                    <h4 className='fs-2'>
+                        Capital Management
+                    </h4>
+                </div>
             </div>
         </div>
     )

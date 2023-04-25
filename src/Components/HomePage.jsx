@@ -4,24 +4,61 @@ import '../CSS/homePage.css'
 import '../CSS/home.css'
 import Cards,{ImgCard,ProgCard} from './Cards';
 
-import { BsSearch,BsTwitter,BsClockHistory,BsClock } from "react-icons/bs";
+import { BsSearch,BsTwitter,BsClockHistory,BsClock,BsFacebook,BsPinterest,BsInstagram ,BsYoutube} from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { AiOutlineGooglePlus } from "react-icons/ai";
 import { GrSkype } from "react-icons/gr";
 import { SiSitepoint } from "react-icons/si";
+import { MdKeyboardArrowDown,MdStarRate,MdKeyboardArrowRight } from "react-icons/md";
+import { GoPlus } from "react-icons/go";
+import { RxCrossCircled } from "react-icons/rx";
+import { HiOutlineChat } from "react-icons/hi";
+import { IoHomeOutline } from "react-icons/io5";
 
 const HomePage = () => {
+
+
+    const ToggleMenu =() =>{
+        document.getElementById("toggle_container").style.display = "flex";
+    }
+
+    const DisableMenu = () =>{
+        document.getElementById("toggle_container").style.display = "none";
+    }
+
+    const CompanyToggle = () =>{
+
+       let c_dom = document.getElementById("com_items")
+        if(c_dom.style.display == "none"){
+            c_dom.style.display = "flex";
+        }else{
+            c_dom.style.display = "none";
+            document.getElementById("legal_items").style.display = 'none'
+        }
+    }
+
+    const LegalToggle = () =>{
+       let l_dom = document.getElementById("legal_items")
+        if(l_dom.style.display == "none"){
+            document.getElementById("com_items").style.display = "flex";
+            l_dom.style.display = "flex";
+        }else{
+            document.getElementById("com_items").style.display = "flex";
+            l_dom.style.display = "none";
+        }
+    }
+
   return (
 
     
+<>
+<div className="main_container">
 
-    <div className="container-fluid px-0 ">
-
-<div className="container-fluid">
+{/* <div className="timing_container"> */}
 
 
 <div className="row">
-    <div className="col-sm-12">
+    <div className="col-sm-12 col-lg-12">
 
         <div className='f_header_top'>
             <div className="inner_f_header_top">
@@ -73,30 +110,50 @@ const HomePage = () => {
 
 
 </div>
-</div>
+{/* </div> */}
 
 {/* Novbar */}
-        <div className="row ">
-            <div className="col-sm-5 fs-1 text-sm-center fw-bold lh-sm d-flex justify-content-center py-4">
+        <div className="row nav_bar ">
+            <div className="col-lg-5 col-sm-6  fs-1 text-sm-center fw-bold lh-sm d-flex justify-content-center py-4">
                 logo
             </div>
-            <div className="col-sm-7 fs-2">
+            <div className="col-lg-7 col-sm-6 fs-2 ">
                 <div className="row py-5 ">
-                    <div className="col-sm-8">
-                        <div className="row menu_items">
-                            <div className="col-sm-2 fs-5 text-center " style={{fontWeight:500 , color:'#000' }}  >HOME </div>
-                            <div className="col-sm-2 fs-5 text-center " style={{fontWeight:500, color:'#000' }}   >COMPANY</div>
-                            <div className="col-sm-2 fs-5 text-center " style={{fontWeight:500, color:'#000' }}   >CONTACT</div>
-                            <div className="col-sm-2 fs-5 text-center " style={{fontWeight:500, color:'#000' }}  >SIGN UP</div>
-                            <div className="col-sm-2 fs-5 text-center " style={{fontWeight:500, color:'#000' }}  >SIGN IN</div>
+                    <div className="col-lg-8 col-sm-0">
+                        <div className="row menu_items ">
+                            <div className="col-sm-2 fs-5 text-center py-1 items "   >HOME </div>
+                            <div className="col-sm-3 fs-5 text-center py-1 more_company items "  >
+                                 COMPANY <MdKeyboardArrowDown className='fs-2 text-center ' />
+                                 <div className="list_company_item py-3 ">
+                                    <div className='two_opt px-4' >
+                                        <p  >ABOUT US</p>
+                                        <p className='more_opt_legal' >  LEGAL <GoPlus className='fw-bold fs-4'/>
+                                        
+
+                                            <div className=" py-3 px-4 more_legal" >
+                                                <p>TERMS & CONDITIONS</p>
+                                                <p style={{
+                                                    borderTop:'1px solid #afadade3',
+                                                    borderBottom:'1px solid #afadade3'
+                                                }}>DISCLAMER</p>
+                                                <p>PRIVACY POLICY</p>
+                                            </div>
+
+                                         </p>
+                                    </div>
+                                 </div>
+                                </div>
+                            <div className="col-sm-2 fs-5 text-center py-1 items"   >CONTACT</div>
+                            <div className="col-sm-2 fs-5 text-center py-1 items"  >SIGN UP</div>
+                            <div className="col-sm-2 fs-5 text-center py-1 items" >SIGN IN</div>
                         </div>
                     </div>
-                    <div className="col-sm-2 fs-5 text-center " style={{fontWeight:500, color:'#000' }}  >
+                    <div className="col-lg-2 col-sm-6  fs-5 text-center " style={{fontWeight:500, color:'#000' }}  >
                         <div className="row last_part">
-                            <div className="col-sm-6">
-                                <BsSearch className='fs-2'/>
+                            <div className="col-sm-3 col-lg-6 nav_search_icon">
+                                <BsSearch className='fs-2 '/>
                             </div>
-                            <div className="col-sm-6 more_symbol py-2">
+                            <div className="col-sm-3 col-lg-6 more_symbol py-2" onClick={ToggleMenu}>
                                 <div className="more_lines"></div>
                                 <div className="more_lines"></div>
                                 <div className="more_lines"></div>
@@ -108,12 +165,12 @@ const HomePage = () => {
         </div>
 
     {/* Slider */}
-    <div className="container-fluid px-0 slider_con">
+    <div className="container-fluid px-0 slider_con ">
         <div className="row px-0 ">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active ">
-                        <img src="./img/pic1.jpg" className="d-block w-100 carousel_main_img" alt="..."/>
+                        <img src="./img/3.jpg" className="d-block w-100 carousel_main_img" alt="..."/>
                         <div class="carousel-caption d-none d-md-block slider_img_text">
                             <div className="slider_title1">
                                 <p>Get More. Make Less </p>
@@ -137,13 +194,13 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div class="carousel-item ">
-                        <img src="./img/pic2.jpg" className="d-block w-100 carousel_main_img" alt="..."/>
+                        <img src="./img/1.jpg" className="d-block w-100 carousel_main_img" alt="..."/>
                         <div class="carousel-caption d-none d-md-block slider_img_text">
                         <div className="slider_title2">
                             <div className="inner_l_slider2"></div>
                             <div className="inner_r_slider2">
-                                <p>Get More. Make Less </p>
-                                <h1>LETS START <br/> WITH FINANCE. </h1>
+                                <p>BHARAT FINANCE WILL HELPING </p>
+                                <h1>BUILD AND <br/> GROW BUSINESS </h1>
                                 <div className="line_image "></div>
                                 <div className="line_image l2"></div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, ullam?.</p>
@@ -165,11 +222,11 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div class="carousel-item ">
-                        <img src="./img/pic3.jpg" className="d-block w-100 carousel_main_img" alt="..."/>
+                        <img src="./img/2.jpg" className="d-block w-100 carousel_main_img" alt="..."/>
                         <div class="carousel-caption d-none d-md-block slider_img_text">
                         <div className="slider_title1 slider3">
-                                <p>Get More. Make Less </p>
-                                <h1>LETS START <br/> WITH FINANCE. </h1>
+                                <p>BHARAT FINANCE </p>
+                                <h1>TAKE CARE <br/> OF YOUR FUTURE </h1>
                                 <div className="line_image "></div>
                                 <div className="line_image l2">
                                     <div className="inner_l2"></div>
@@ -179,7 +236,7 @@ const HomePage = () => {
                                     <button style={{
                                         color:"#fff",
                                         backgroundColor:"#fd4a36"
-                                    }} >Sign uP</button>
+                                    }} >Sign UP</button>
                                     
                                 </div>
                             </div>
@@ -217,6 +274,7 @@ const HomePage = () => {
 
     </div>
 
+{/* Developing Leaders */}
     <div className="row mt-5 "  >
         <div className="col-sm-12">
             <div className="row">
@@ -246,7 +304,155 @@ const HomePage = () => {
 
                         </div>
                     </div>
-                        <div className="row">
+
+                    <div className="row  developing_leaders_con py-5">
+                        <div className="col-sm-12 fs-1 text-light py-5 px-5 inner_developing_leaders ">
+                            
+                                <div className=" dev_led_main py-4 my-5">
+                                    <div className="image">
+                                        <div className="icon">
+                                            <span>
+                                                <IoHomeOutline/>
+                                            </span>
+                                        </div>
+                                        <img src="./img/image-1.jpg" alt="" className='img-fluid' />
+                                    </div>
+                                    <div className="content ">
+                                        <h4 className='fs-4 text-center' style={{
+                                            color:'#fd4a36'
+                                        }}>
+                                            EXPLORE
+                                        </h4>
+                                        <h3 className='fs-2 text-center'>
+                                            Our Company History
+                                        </h3>
+                                    </div>
+
+
+                                    <div className="overlay">
+
+                                        <div className="content">
+                                            <h4 className='fs-3' style={{
+                                            color:'#fd4a36'
+                                        }}>
+                                                EXPLORE
+                                            </h4>
+                                            <h3 className='fs-2'>
+                                                Our Company History
+                                            </h3>
+                                        </div>
+                                        <div className="text">
+                                            <p className='fs-4 text-light text-center px-5'>
+                                            In a free hour when our power choices when proveprevents best all easy to distinguish.
+                                            </p>
+
+                                            <div className="link_btn">
+                                                <a href="#">
+                                            <MdKeyboardArrowRight className='fs-1 fw-bold'/>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div className="dev_led_main_2  py-4 my-5">
+                                    <div className="orange_design">
+                                        <div className="inner_l_design"></div>
+                                        <div className="inner_r_design"></div>
+                                    </div>
+                                    <div className="content py-3 shadow-lg">
+                                        
+                                        <h4 className='fs-4' style={{
+                                            color: "#fd4a36"
+                                        }} >
+                                            KNOWLEDGE
+                                        </h4>
+                                        <h2 className='fs-2'>
+                                            Smart self service
+                                        </h2>
+                                    </div>
+
+
+                                    <div className="overlay">
+
+                                        <div className="content shadow-lg">
+                                            <h4 className='fs-3' style={{
+                                            color:'#fd4a36'
+                                        }}>
+                                                KNOWLEDGE
+                                            </h4>
+                                            <h3 className='fs-2'>
+                                            Smart self service
+                                            </h3>
+                                        </div>
+                                        <div className="text">
+                                            <p className='fs-4 text-light text-center px-5'>
+                                            In a free hour when our power choices when proveprevents best all easy to distinguish.
+                                            </p>
+
+                                            <div className="link_btn">
+                                                <a href="#">
+                                            <MdKeyboardArrowRight className='fs-1 fw-bold'/>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div className="dev_led_main_2  py-4 my-5">
+                                    <div className="orange_design">
+                                        <div className="inner_l_design"></div>
+                                        <div className="inner_r_design"></div>
+                                    </div>
+                                    <div className="content py-3 shadow-lg">
+                                        
+                                        <h4 className='fs-4' style={{
+                                            color: "#fd4a36"
+                                        }} >
+                                            KNOWLEDGE
+                                        </h4>
+                                        <h2 className='fs-2'>
+                                            Smart self service
+                                        </h2>
+                                    </div>
+
+
+                                    <div className="overlay">
+
+                                        <div className="content shadow-lg">
+                                            <h4 className='fs-3' style={{
+                                            color:'#fd4a36'
+                                        }}>
+                                                KNOWLEDGE
+                                            </h4>
+                                            <h3 className='fs-2'>
+                                            Smart self service
+                                            </h3>
+                                        </div>
+                                        <div className="text">
+                                            <p className='fs-4 text-light text-center px-5'>
+                                            In a free hour when our power choices when proveprevents best all easy to distinguish.
+                                            </p>
+
+                                            <div className="link_btn">
+                                                <a href="#">
+                                            <MdKeyboardArrowRight className='fs-1 fw-bold'/>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                
+
+                        </div>
+                    </div>
+
+                        <div className="row py-5">
                         <div className="col-sm-2"></div>
                         <div className="col-sm-10">
 
@@ -270,18 +476,18 @@ const HomePage = () => {
                 <div className="col-sm-2"></div>
             </div>
 
-                    <div className="row bg-dark">
-                        <div className="col-sm-12 fs-1">
+            {/* <div className="row  developing_leaders_con">
+                <div className="col-sm-5 fs-1 text-light">
                             hello
-                        </div>
-                    </div>
+                 </div>
+            </div> */}
         </div>
     </div>
 
 
 {/* How can we help You */}
 <section className='row '>
-    <div className="col-sm-6">
+    <div className="col-lg-6 col-sm-12">
         <div className="logo mt-5 img-thumbnail float-end rounded-circle ">
             <div className="log_inner p-4 m-4 img-thumbnail float-end rounded-circle shadow-lg  ">
                 <img src="./img/icon-12.png" alt="" className='img-thumbnail float-end   ' />
@@ -294,7 +500,7 @@ const HomePage = () => {
             }} ></div>
         </div>
     </div>
-    <div className="col-sm-6">
+    <div className="col-lg-6 col-sm-0 help_you">
         <div className="row">
             <div className="col-sm-12 py-5 fw-bolder" style={{
                 fontSize:33,
@@ -346,35 +552,50 @@ const HomePage = () => {
 
 {/* container Boxes */}
 <div className="container-fluid px-0 con_6">
-    <div className="row d-sm-flex align-items-center justify-content-evenly" style={{
-        padding:80
+    <div className="row d-sm-flex align-items-center justify-content-evenly content " style={{
+        padding:50
     }} >
-        <div className="col-sm-4 " >
-            <Cards/>
+        <div className="col-sm-12  col-lg-4 " >
+            <Cards 
+            t_text="Projects with 100% satisfaction" 
+            m_text="2.5K" 
+            b_text="Power of choices when nothing what we like best principle."
+            logo_img='./img/icon-1.png'
+             />
         </div>
-        <div className="col-sm-4">
-        <Cards/>
+        <div className="col-sm-12 col-lg-4  ">
+            <Cards 
+            t_text="Experienced & Professional team" 
+            m_text="138+" 
+            b_text="Except to obtain some of advantages from it has any right to find." 
+            logo_img='./img/icon-2.png'
+            />
         </div>
-        <div className="col-sm-4">  
-        <Cards/>
+        <div className="col-sm-12 col-lg-4 ">  
+            <Cards 
+            t_text="Revenue of last financial year" 
+            m_text="9.8%" 
+            b_text="Complete account of the system and expound actual teachings." 
+            logo_img='./img/icon-3.png'
+            />
         </div>
     </div>
 </div>
 
-{/* Resons for choosing */}
-<div className="row" style={{
+{/* Reasons for choosing */}
+<div className="row mt-5" style={{
     backgroundColor:'#201630',
     paddingBottom:90
 }}>
-    <div className="col-sm-12" style={{
+    <div className="col-lg-12" style={{
         position:'relative'
     }}>
         <img src="./img/pattern-3.png" alt="" className='img-fluid float-end' />
 
-        <div className="row" style={{
+        <div className="row reason_image" style={{
             position:'absolute'
         }} >
-            <div className="col-sm-12">           
+            <div className="col-lg-12 ">           
                 <img src="./img/image-1.png" alt="" className='img-fluid ' />    
             </div>
         </div>
@@ -387,7 +608,8 @@ const HomePage = () => {
          right:0,
          left:0
     }}>
-        <div className="col-sm-6  px-5" style={{
+        
+        <div className="col-sm-12  col-lg-6 px-5" style={{
             position:'relative'
 
         }} >
@@ -450,7 +672,8 @@ const HomePage = () => {
                 </div>
             </div>
         </div>
-        <div className="col-sm-6">
+        
+        <div className="col-sm-12 col-lg-6 ">
             <div className="row">
                 <div className="col-sm-12">
                     <h1 className='fw-bolder p-5' style={{
@@ -564,16 +787,25 @@ const HomePage = () => {
 
  <div className="proj_con_card">
         <div className="inner_con_proj">
-            <ImgCard img_src={'./img/pic1.jpg'} />
-            <ImgCard img_src={'./img/pic1.jpg'} />
-            <ImgCard img_src={'./img/pic1.jpg'} />
+            <ImgCard img_src={'./img/gallery-1.jpg'} />
+            <ImgCard img_src={'./img/gallery-2.jpg'} />
+            <ImgCard img_src={'./img/gallery-3.jpg'} />
+
         </div>
  </div>
  <div className="proj_con_card">
         <div className="inner_con_proj">
-            <ImgCard img_src={'./img/pic1.jpg'} />
-            <ImgCard img_src={'./img/pic1.jpg'} />
-            <ImgCard img_src={'./img/pic1.jpg'} />
+            <ImgCard img_src={'./img/gallery-4.jpg'} />
+            <ImgCard img_src={'./img/gallery-5.jpg'} />
+            
+            <div className="card_con">
+            <div className="inner_card_con_l ">
+                <a href='#' className="middle_content fs-3 ">
+                    Check <br /> More Works
+                </a>
+            </div>
+        </div>
+
         </div>
  </div>
 
@@ -591,7 +823,7 @@ const HomePage = () => {
             <div className="circles"></div>
         </div>
 
-        <div className="wrk_progress_para">
+        <div className="wrk_progress_para fs-2">
         We aim to acquire a significant market share in financial services<br/>
         distribution with assessment performed from various perspectives of creditability in absence of proper and systematic.
         </div>
@@ -607,67 +839,164 @@ const HomePage = () => {
 </div>
 
 
-<div className="row ">
+{/* bottom carousel */}
+<div className="row below_carousel">
     <div className="col-lg-6 col-sm-12 ">
         <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
-            <div className="carousel-item active">
+            <div className="carousel-item active" data-bs-interval="2000">
             <img src="./img/image-6.jpg" className="d-block w-100" alt="..."/>
             </div>
-            <div className="carousel-item">
+            <div className="carousel-item" data-bs-interval="2000" >
             <img src="./img/image-7.jpg" className="d-block w-100" alt="..."/>
             </div>
         </div>
         </div>
     </div>
 
-    <div className="col-lg-6 col-sm-12 bottom_slider">
-            
+    <div className="col-lg-6 col-sm-12 bottom_slider" style={{
+                           display: "flex",
+                        //    alignItems: "center",
+                        //    justifyContent: "center",
+                           color:'#fff'
+                        }} >
+    <div id="carouselExampleSlidesOnly " className="carousel slide" data-bs-ride="carousel"  >
+        <div className="carousel-inner">
+            <div className="carousel-item active" data-bs-interval="2000">
+                <div className="b_slider_content">
+                        <div className="row py-5" >
+                            <div className="col-sm 12 ">
+                                <HiOutlineChat  />
+                                <h1 >
+                                Best Service Ever, We Highly Recommend!
+                                </h1>
+                                <p>
+                                Finance’s is specialized retail financing organization engaged in financial services.
+                                </p>
+                                <p className='stars'>
+                                    <MdStarRate/>
+                                    <MdStarRate/>
+                                    <MdStarRate/>
+                                    <MdStarRate/>
+                                    <MdStarRate/>
+                                </p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div className="carousel-item" data-bs-interval="2000">
+            <div className="b_slider_content">
+                        <div className="row py-5" >
+                            <div className="col-sm 12 ">
+                                <HiOutlineChat  />
+                                <h1 >
+                                Best Service Ever, We Highly Recommend!
+                                </h1>
+                                <p>
+                                Finance’s is specialized retail financing organization engaged in financial services.
+                                </p>
+                                <p className='stars'>
+                                    <MdStarRate/>
+                                    <MdStarRate/>
+                                    <MdStarRate/>
+                                    <MdStarRate/>
+                                    <MdStarRate/>
+                                </p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
 </div>
 
 
+{/* feactures section two */}
+
+<div className="feacture_sections_two">
+    <div className="inner_f_s_t">
+
+        <div className="left_feacture_section  ">
+            <div className="inner_left_feacture ">
+                <div className="row py-5 px-4 overlay_l_div" >
+                    <div className="col-sm-2 py-3">
+                        <img src="./img/icon-9.png" alt="" className='img-thumbnail' />
+                    </div>
+                    <div className="col-sm-10 py-3">
+                            <h2 className='fs-2'>
+                            Become a Partner of Bharat Finance
+                            </h2>
+                            <p className="fs-4">
+                            To become our partner you need to register on our website.
+                            </p>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+        <div className="right_feacture_section ">
+            <div className="inner_right_feacture ">
+                <div className="row py-5 px-4 overlay_r_div">
+                        <div className="col-sm-2 py-3 " >
+                            <img src="./img/icon-10.png" alt="" className='img-thumbnail' />
+                        </div>
+                        <div className="col-sm-10 py-3">
+                                <h2 className='fs-2'>
+                                Career Opportunities in Bharat Finance
+                                </h2>
+                                <p className="fs-4">
+                                Anyone who is our registered partner can earn money anywhere anytime using internet.
+                                </p>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 {/* Footer */}
-<div className="footer_div">
-    <div className="inner_footer_div">
+<div className="footer_div ">
+    <div className=" inner_footer_div">
         <div className="first_part"></div>
-        <div className="second_part">
-            <div className="l_part">
-                <h1>LOGO</h1>
+
+        <div className=" row second_part">
+            <div className=" col-lg-3 col-sm-6 l_part ">
+                <h1 className='fs-1'>LOGO</h1>
             </div>
-            <div className="m_part">
-                <div className="first">
-                    <div className="inner_f_items">
-                        <h2>Company</h2>
-                        <p>Home</p>
-                        <p>About</p>
-                        <p>Contact</p>
-                        <p>Sign Up</p>
-                        <p>Sign In</p>
-                    </div>
+            {/* <div className="m_part"> */}
+                <div className=" col-lg-2  col-sm-6  py-3 first">
+                    {/* <div className="inner_f_items"> */}
+                        <h2 className='fs-2 fw-bold'>Company</h2>
+                        <p className='fs-3' >Home</p>
+                        <p className='fs-3'>Contact</p>
+                        <p className='fs-3'>Sign Up</p>
+                        <p className='fs-3'>Sign In</p>
+                    {/* </div> */}
                 </div>
-                <div className="second">
-                <div className="inner_f_items">
-                        <h2>Legal</h2>
-                        <p>Terms & Conditions</p>
-                        <p>Disclaimer</p>
-                        <p>Privacy Policy</p>
-                    </div>
+                <div className=" col-lg-2 col-sm-6 py-3 second">
+                {/* <div className="inner_f_items"> */}
+                        <h2 className='fs-2 fw-bold'>Legal</h2>
+                        <p className='fs-3'>Terms & Conditions</p>
+                        <p className='fs-3'>Disclaimer</p>
+                        <p className='fs-3'>Privacy Policy</p>
+                    {/* </div> */}
                 </div>
-                <div className="third">
-                    <div className="inner_f_items">
-                        <h2>Support</h2>
-                        <p>FAQ’s</p>
-                        <p>Telegram</p>
-                        <p>Contact</p>
-                        <p>Resources</p>
-                    </div>
+                <div className="col-lg-2 col-sm-6 py-3 third">
+                    {/* <div className="inner_f_items"> */}
+                        <h2 className='fs-2 fw-bold'> Credentials & Support</h2>
+                        <p className='fs-3'>FAQ’s</p>
+                        <p className='fs-3'>Telegram</p>
+                        <p className='fs-3'>Contact</p>
+                        <p className='fs-3'>Resources</p>
+                    {/* </div> */}
                 </div>
-            </div>
-            <div className="r_part">
-                <div className="inner_r_part">
-                        <h2>Project</h2>
-                        <div className="images_r_part">
+            {/* </div> */}
+            <div className=" col-lg-3 col-sm-12 py-3 r_part">
+                <div className="inner_r_part px-3">
+                        <h2 className='fs-2 fw-bold'>Project</h2>
+                        <div className="images_r_part py-4">
                             <div className="top_row">
                                 <div className="top_images_r_part">
                                     <img src="./img/pic1.jpg" alt="" />
@@ -679,8 +1008,6 @@ const HomePage = () => {
                                 <img src="./img/pic3.jpg" alt="" />
                                 </div>
 
-                            </div>
-                            <div className="top_row">
                                 <div className="top_images_r_part">
                                     <img src="./img/pic1.jpg" alt="" />
                                 </div>
@@ -692,11 +1019,13 @@ const HomePage = () => {
                                 </div>
 
                             </div>
+
                         </div>
                 </div>
             </div>
 
         </div>
+
         <div className="third_part">
             <div className="f_tp_footer">
                 <h3>Privacy Policy/Terms & Conditions</h3>
@@ -718,8 +1047,8 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="t_tp_footer">
-                <h3>
+            <div className="t_tp_footer mt-2">
+                <h3 className='fs-4 text-center'>
                 © Copyright 2023 Bharat Finance | All Rights Reserved. | Designed & Developed by Kanak Technology
                 </h3>
             </div>
@@ -728,6 +1057,66 @@ const HomePage = () => {
 </div>
 
     </div>
+
+    <div className="upper_container" id='toggle_container' >
+        <div className="left_con_upper"></div>
+        <div className="right_con_upper">
+            <div className="close_logo"  onClick={DisableMenu}>
+                    <RxCrossCircled />
+            </div>
+
+            <div className="r_top_con">
+                LOGO
+            </div>
+            <div className="r_bottom_con">
+                <div className="item_lists">&nbsp; HOME</div>
+                <div className="item_lists comp_item"  onClick={CompanyToggle}>&nbsp; COMPANY</div>
+
+                    <div className="company_lists" id ='com_items'>
+
+                        <div className="item_lists"> &nbsp;&nbsp;&nbsp; ABOUT US</div>
+                        <div className="item_lists legal_item" onClick={LegalToggle}> &nbsp;&nbsp;&nbsp; LEGAL  </div>
+
+                    </div>
+                        <div className="legal_lists" id='legal_items'  >
+
+                            <div className="item_lists"> &nbsp;&nbsp;&nbsp; TERMS & CONDITIONS</div>
+                            <div className="item_lists"> &nbsp;&nbsp;&nbsp; DISCLAMER</div>
+                            <div className="item_lists"> &nbsp;&nbsp;&nbsp; PRIVACY POLICY </div>
+
+                        </div>
+                
+                <div className="item_lists"> &nbsp; CONTACT</div>
+                <div className="item_lists">&nbsp; SIGN UP</div>
+                <div className="item_lists">&nbsp; SIGN IN</div>
+
+                <div className="menu_logos">
+                    <div className="inner_logos">
+
+                        <div className="logs_items"> 
+                            <BsTwitter/>
+                        </div>
+                        <div className="logs_items">
+                            <BsFacebook/>
+                        </div>
+                        <div className="logs_items">
+                            <BsPinterest/>
+                        </div>
+                        <div className="logs_items">
+                            <BsInstagram/>
+                        </div>
+                        <div className="logs_items">
+                            <BsYoutube/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+    </>
   )
 }
 
