@@ -250,4 +250,17 @@ export const DevelopingCards = () =>{
     )
 }
 
+export const ProudCard = ({indus_img}) =>{
+    return(
+        <>
+            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
+                display:"flex",
+                justifyContent:"center",
+            }}>
+                <img src={indus_img} alt="" />
+            </div>
+        </>
+    )
+}
+
 export default Cards

@@ -1,20 +1,27 @@
 import React from 'react'
 
 import '../CSS/homePage.css'
-import { HeaderCard,ServiceBox } from './Cards'
+import { HeaderCard,ServiceBox,ProudCard } from './Cards'
+import Navbar,{MainNavbar} from './Navbar';
+import Footer from './Footer';
 
 import { BsBank2,BsArrowRight,BsTrophy,BsFillPeopleFill } from "react-icons/bs";
-import { AiOutlineFundProjectionScreen } from "react-icons/ai";
+import { AiOutlineFundProjectionScreen,AiOutlineInsurance } from "react-icons/ai";
+import { FaBalanceScale ,FaIndustry} from "react-icons/fa";
+import { GiLifeTap } from "react-icons/gi";
+import { MdTrolley } from "react-icons/md";
 
 const About = () => {
   return (
     <div>
+        <Navbar/>
+        <MainNavbar/>
         
-        <HeaderCard header='Terms and Conditions' path='HOME  > TERMS AND CONDITIONS' />
+        <HeaderCard header='About company' path='HOME  >  ABOUT US' />
 
-        <div className="row px-3 py-5">
-            <div className="col-sm-6 ps-5  ">
-                <h1 className='fw-bolder ps-5 ' style={{
+        <div className="row px-3 py-5 ">
+            <div className="col-lg-6 col-sm-12 ps-5 py-5 ">
+                <h1 className='fw-bolder  ' style={{
                     fontSize:35 
                 }} > 
                 Professional And <br />
@@ -30,34 +37,37 @@ const About = () => {
                     <div className="circles"></div>
                 </div>
 
-                <p className='fs-3 ps-5' >
+                <p className='fs-3 ' >
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus corporis in expedita non sed ea quis vel. Repudiandae, distinctio magni?
                 </p>
 
             </div>
-            <div className="col-sm-6  ">
+            <div className="col-lg-6  col-sm-12 py-5 ">
                     <div className="experience_year_block">
                         <div className="image">
                             <img src="./img/image-46.jpg" alt="" />
                             <h2>
                                 14
                             </h2>
+
+                            <div className="text">
+                                Years <br />
+                                experience
+                            </div>
+                            
                         </div>
-                        <div className="text">
-                             Years <br />
-                             experience
-                        </div>
+
                     </div> 
             </div>
         </div>
 
-        <div class="row">
+        <div class="row ">
 
-            <div className="col-sm-6">
-                <img src="./img/image-45.jpg" alt="" />
+            <div className="col-lg-6 col-sm-12 py-5 reason_about" >
+                <img src="./img/image-45.jpg" alt="" className='img-fluid' />
             </div>
 
-            <div className="col-sm-6   ">
+            <div className="col-lg-6  col-sm-12 py-5  ">
                     <h1 className='fw-bolder ' style={{
                         fontSize:35 
                     }} > 
@@ -78,7 +88,7 @@ const About = () => {
                         <div className="col-sm-2 py-4">
                         <div className="Consultancy_icon"></div>
                         </div>
-                        <div className='col-sm-9' >
+                        <div className=' col-sm-10' >
                             <h2 className='fs-2 fw-bolder' >
                             Flexibility to serve you <br />
                             better service
@@ -111,26 +121,23 @@ const About = () => {
 
         <div className="row fun_facts_section py-5">
             <div className="col-sm-12 py-5" >
-                <div className="row" style={{
+                <div className="row " style={{
 
                     color: 'white',
                 }}>
 
-                    <div className="col-sm-4  " style={{
-                        display: 'grid',
-                        alignItems: 'center',
-                    }} >
+                    <div className="col-lg-4 col-sm-12 ">
 
                         <div className="row">
 
-                            <div className="col-sm-5 text-end pt-5">
+                            <div className="col-lg-5 col-sm-1 text-end pt-5  fun_facts_icon">
                                 <AiOutlineFundProjectionScreen style={{
                                 color:'#fff',
                                 fontSize:50,
                                 fontWeight:'bold'
                             }}  />
                             </div>
-                            <div className="col-sm-7 p-5  " style={{
+                            <div className="col-lg-7 col-sm-10 p-5  " style={{
                                 borderRight: '2px solid grey'
                             }} >
                                 <p className='fs-3 fw-bold pb-3'>
@@ -159,21 +166,18 @@ const About = () => {
 
                     </div>
 
-                    <div className="col-sm-4 " style={{
-                        display: 'grid',
-                        alignItems: 'center',
-                    }}  >
+                    <div className="col-sm-12 col-lg-4 " >
 
-                    <div className="row">
+                    <div className="row ">
 
-                        <div className="col-sm-5 text-end pt-5 ">
+                        <div className="col-lg-5 col-sm-1 text-end pt-5 fun_facts_icon ">
                             <BsFillPeopleFill style={{
                                 color:'#fff',
                                 fontSize:50,
                                 fontWeight:'bold'
                             }} />
                         </div>
-                        <div className="col-sm-7 p-5  " style={{
+                        <div className="col-lg-7 col-sm-11 p-5  " style={{
                             borderRight: '2px solid grey'
                         }} >
                             <p className='fs-3 fw-bold pb-3'>
@@ -199,21 +203,19 @@ const About = () => {
                         </div>
 
                     </div>
-                    <div className="col-sm-4 " style={{
-                        display: 'grid',
-                        alignItems: 'center',
-                    }} >
+                    <div className="col-lg-4  col-sm-12" >
 
                     <div className="row">
 
-                        <div className="col-sm-5 text-end pt-5 ">
+                        <div className="col-lg-5 col-sm-1 text-end pt-5 fun_facts_icon ">
                             <BsTrophy style={{
                                 color:'#fff',
                                 fontSize:50,
                                 fontWeight:'bold'
                             }} />
                         </div>
-                        <div className="col-sm-7 p-5  " style={{
+
+                        <div className="col-lg-7 col-sm-11 p-5  " style={{
                             borderRight: '2px solid grey'
                         }} >
                             <p className='fs-3 fw-bold pb-3'>
@@ -235,12 +237,11 @@ const About = () => {
                                 -Testimonials
                             </p>
                         </div>
-
                         </div>
-
                     </div>
-
                 </div>
+
+
             </div>
         </div>
 
@@ -291,21 +292,21 @@ const About = () => {
                     alignItems:'center'
                 }} >   Banking & <br/> capital market</div>  }/>
 
-            <ServiceBox icon={<BsBank2/> } text={ <div className=" fs-2 fw-bold " style={{
+            <ServiceBox icon={<AiOutlineInsurance/> } text={ <div className=" fs-2 fw-bold " style={{
                     display: 'flex',
                     alignItems:'center'
                 }} >   
                 Finance & <br/>
                 insurance market</div>  }/>
 
-            <ServiceBox icon={<BsBank2/> } text={ <div className=" fs-2 fw-bold " style={{
+            <ServiceBox icon={<MdTrolley/> } text={ <div className=" fs-2 fw-bold " style={{
                     display: 'flex',
                     alignItems:'center'
                 }} >   
                 Logistic & <br/>
                 trasportation</div>  }/>
 
-            <ServiceBox icon={<BsBank2/> } text={ <div className=" fs-2 fw-bold " style={{
+            <ServiceBox icon={<FaBalanceScale/> } text={ <div className=" fs-2 fw-bold " style={{
                     display: 'flex',
                     alignItems:'center'
                 }} >   
@@ -313,7 +314,7 @@ const About = () => {
                 Justice & <br/>    
                 defence security</div>  }/>
 
-            <ServiceBox icon={<BsBank2/> } text={ <div className=" fs-2 fw-bold " style={{
+            <ServiceBox icon={<FaIndustry/> } text={ <div className=" fs-2 fw-bold " style={{
                     display: 'flex',
                     alignItems:'center'
                 }} >   
@@ -321,7 +322,7 @@ const About = () => {
                 Energy & <br/>
                 resource industry</div>  }/>
 
-            <ServiceBox icon={<BsBank2/> } text={ <div className=" fs-2 fw-bold " style={{
+            <ServiceBox icon={<GiLifeTap/> } text={ <div className=" fs-2 fw-bold " style={{
                     display: 'flex',
                     alignItems:'center'
                 }} >   
@@ -455,58 +456,19 @@ const About = () => {
             placeContent:"space-evenly",
             backgroundColor:"#f1f5f8",
         }}>
-            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
-                display:"flex",
-                justifyContent:"center",
-            }}>
-                <img src="./img/client-7.png" alt="" />
-            </div>
-            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
-                display:"flex",
-                justifyContent:"center",
-            }}>
-                <img src="./img/client-8.png" alt="" />
-            </div>
-            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
-                display:"flex",
-                justifyContent:"center",
-            }}>
-                <img src="./img/client-9.png" alt="" />
-            </div>
-            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
-                display:"flex",
-                justifyContent:"center",
-            }}>
-                <img src="./img/client-10.png" alt="" />
-            </div>
 
-            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
-                display:"flex",
-                justifyContent:"center",
-            }}>
-                <img src="./img/client-11.png" alt="" />
-            </div>
-            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
-                display:"flex",
-                justifyContent:"center",
-            }}>
-                <img src="./img/client-12.png" alt="" />
-            </div>
-            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
-                display:"flex",
-                justifyContent:"center",
-            }}>
-                <img src="./img/client-13.png" alt="" />
-            </div>
-            <div className="col-lg-3 col-md-6 border px-5 py-5" style={{
-                display:"flex",
-                justifyContent:"center",
-            }}>
-                <img src="./img/client-14.png" alt="" />
-            </div>
+            <ProudCard  indus_img="./img/client-7.png"  />
+            <ProudCard  indus_img="./img/client-8.png"  />
+            <ProudCard  indus_img="./img/client-9.png"  />
+            <ProudCard  indus_img="./img/client-10.png"  />
+            <ProudCard  indus_img="./img/client-11.png"  />
+            <ProudCard  indus_img="./img/client-12.png"  />
+            <ProudCard  indus_img="./img/client-13.png"  />
+            <ProudCard  indus_img="./img/client-14.png"  />
 
-    
         </div>
+
+        <Footer/>
 
     </div>
   )
